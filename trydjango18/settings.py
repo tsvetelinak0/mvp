@@ -35,7 +35,7 @@ EMAIL_USE_TLS = True
 
 '''
 If using gmail, will need to unlock Captcha
-to enable Django to set for me
+to enable Django to send for me:
 https://accounts.google.com/displayunlockcaptcha
 '''
 
@@ -49,7 +49,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    
+    'crispy_forms',
     'newsletter',
 )
 
@@ -114,3 +115,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "static_root")
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static_in_prj", "our_static"),
+    # os.path.join(BASE_DIR, "static_in_env"),
+    # '/var/www/static/',
+)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "media_root")
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+
+
+
+

@@ -7,5 +7,5 @@ class SignUp(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated   = models.DateTimeField(auto_now_add=False, auto_now=True)
 
-    def __unicode__(self):  #for python 3.3 is __str__
+    def __str__(self):  #for python 3.3 is __str__, python < 3.3 __unicode__
         return self.email
