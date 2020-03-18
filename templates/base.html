@@ -8,40 +8,25 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>{% block head_title %}{% endblock %} The Collector</title>
-
-    {% include 'head_css.html' %}
-
+    <title>{% block head_title %}The Collector{% endblock %}</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/navbar-static/">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
+{% include 'head_css.html' %}
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
+<style>
+  {% block style %} {% endblock %}
+</style>
+
    
-  </head>
-  <body>
-    {% include 'navbar.html' %}
+</head>
 
-<main role="main" class="container-fluid">
+<body>
+  {% include 'navbar.html' %}
+
+<main role="main" class="container">
+
       {% block jumbotron %}
-      <div class="jumbotron">
-        {% block jumbotron_content %}
-
-        {% endblock %}
-      </div>
+      
       {% endblock %}
 
       {% block content %}

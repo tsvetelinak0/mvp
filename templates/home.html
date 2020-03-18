@@ -3,26 +3,33 @@
 
 {% block head_title %}Welcome | {% endblock %}
 
-{% block jumbotron_content %}
-  <h1>The Collector newsletter</h1>
-  <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
-  <a class="btn btn-lg btn-primary" href="/docs/4.3/components/navbar/" role="button">View navbar docs &raquo;</a>
+<style>
+  {% block style %}
+
+  {% endblock %}
+</style>
+
+{% block jumbotron %}
+
+<div class="jumbotron">
+  <h1 class='header-title'>The Collector</h1>
+  <p class="lead text-align-center">Simple newsletter application built with Django &amp; Bootstrap</p>
+  <a class="btn btn-lg btn-primary" href="" role="button">Join us &raquo;</a>
+</div>
+
 {% endblock %}
 
 
 {% block content %}
-<div class="row">
-  <div class="col-sm-6 col-md-3">
-    <h1>{{ title }}</h1>
 
-    {{ user }}
-
-    {{ request.user }}
-
-    <form method='POST' action=''>{% csrf_token %}
-      {{ form|crispy }}
-      <input class='btn btn-primary' type='submit' value='Sign Up' />
-    </form>
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <p><h1 class="lead text-align-center">{{ title }}</h1></p>
+      <form method='POST' action=''>{% csrf_token %}
+        {{ form|crispy }}
+        <input class='btn btn-primary' type='submit' value='Sign Up' />
+      </form>
+    </div>
   </div>
-</div>
+
 {% endblock %}
