@@ -5,7 +5,7 @@
 
 {% block content %}
 <div class='row'>
-<div class='col-sm-6 col-sm-offset-3'>
+<div class='col-sm-6 offset-sm-3'>
 <h1>Login</h1>
 <form method="post" action=".">
   {% csrf_token %}
@@ -19,7 +19,7 @@
 </div>
 <hr/>
 <div class='row'>
-<div class='col-sm-6 col-sm-offset-3 text-align-center'>
+<div class='col-sm-6 offset-sm-3 text-align-center'>
 <p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
 <p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
 </div>
