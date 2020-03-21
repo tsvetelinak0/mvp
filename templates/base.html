@@ -8,13 +8,15 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>{% block head_title %}The Collector{% endblock %}</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/navbar-static/">
+    <title>{% block head_title %}_The Collector{% endblock %}</title>
+    
 
 {% include 'head_css.html' %}
 
 <style>
-  {% block style %} {% endblock %}
+  {% block style %} 
+  
+  {% endblock %}
 </style>
 
    
@@ -23,15 +25,16 @@
 <body>
   {% include 'navbar.html' %}
 
-<main role="main" class="container">
-
-      {% block jumbotron %}
+  {% block jumbotron %}
       
-      {% endblock %}
+  {% endblock %}
+
+<main role="main" class="container">
 
       {% block content %}
 
       {% endblock %}
+      
 </main>
  {% include 'javascript.html' %}
  </body>

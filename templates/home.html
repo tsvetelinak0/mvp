@@ -6,6 +6,48 @@
 
 <style>
 {% block style %}
+/* .bg-light {
+  background-color: #08424c !important;
+  margin-bottom: 1px;
+  border-color: grey;
+}
+
+.navbar-light .navbar-brand {
+    
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #dbe2d9;
+}
+
+*/
+.navbar-static-top {
+  background-color: #08424c !important;
+  margin-bottom: 1px !important; 
+}
+
+.jumbotron {
+  background-color: #08424c;
+  color:#e4aa00;
+  border-color: grey;
+  border-radius: 0px;
+}
+
+.btn {
+  color: #dbe2d9;
+  border-radius: 0px;
+}
+
+.btn-primary {
+  color: #dbe2d9;
+  background-color: #332e28;
+  border-color: grey;
+}
+
+.btn-primary:hover {
+  background-color: #CD5C5C;
+  border-color: #FF6666;
+} 
 
 {% endblock %}
 </style>
@@ -13,10 +55,19 @@
 {% block jumbotron %}
 
 <div class="jumbotron">
-  <h1 class='header-title'>The Collector</h1>
-  <p class="lead text-align-center">Simple newsletter application built with Django &amp; Bootstrap</p>
-  <a class="btn btn-lg btn-primary" href="" role="button">Join us &raquo;</a>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1>_The Collector</h1>
+        <p>Simple newsletter application built with Django &amp; Bootstrap</p>
+        <p><a class="btn btn-lg btn-primary" href="" role="button">Join us &raquo;</a></p>
+      </div>
+      <div class='col-sm-6' style="background-color: black; height: 270px;"></div>
+      
+    </div>
+  </div>
 </div>
+
 
 {% endblock %}
 
@@ -24,7 +75,7 @@
 {% block content %}
 
   <div class="row">
-    <div class="col-sm-6 offset-sm-3">
+    <div class="col-sm-6 col-sm-offset-3">
       <p><h1 class="lead text-align-center">{{ title }}</h1></p>
       <form method='POST' action=''>{% csrf_token %}
         {{ form|crispy }}
