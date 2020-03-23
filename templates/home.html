@@ -53,6 +53,7 @@
 </style>
 
 {% block jumbotron %}
+{% if not request.user.is_authenticated %}
 
 <div class="jumbotron">
   <div class="container">
@@ -63,25 +64,31 @@
         <p><a class="btn btn-lg btn-primary" href="" role="button">Join us &raquo;</a></p>
       </div>
       <div class='col-sm-6' style="background-color: black; height: 270px;"></div>
-      
     </div>
   </div>
 </div>
 
-
+{% endif %}
 {% endblock %}
 
 
 {% block content %}
 
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <p><h1 class="lead text-align-center">{{ title }}</h1></p>
-      <form method='POST' action=''>{% csrf_token %}
-        {{ form|crispy }}
-        <input class='btn btn-primary' type='submit' value='Sign Up' />
-      </form>
-    </div>
-  </div>
+{% if request.user.is_authenticated %}
+<h1 class='text-align-center'>You are logged in!</h1> 
 
+{{ queryset }}
+{% else %}
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <p><h1 class="lead text-align-center">{{ title }}</h1></p>
+    <form method='POST' action=''>{% csrf_token %}
+      {{ form|crispy }}
+      <input class='btn btn-primary' type='submit' value='Sign Up' />
+    </form>
+  </div>
+</div>
+
+{% endif %}
 {% endblock %}
