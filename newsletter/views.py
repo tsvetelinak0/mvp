@@ -33,7 +33,7 @@ def home(request):
             "title": "Thank you!"
         }
 
-    if request.user.is_authenticated() and request.user.is_staff:
+    if request.user.is_authenticated and request.user.is_staff:
         queryset = SignUp.objects.all().order_by('-timestamp')
         context = {
             "queryset": queryset

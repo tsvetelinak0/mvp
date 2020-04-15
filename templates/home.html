@@ -4,24 +4,9 @@
 
 {% block head_title %}Welcome | {% endblock %}
 
-<style>
 {% block style %}
-/* .bg-light {
-  background-color: #08424c !important;
-  margin-bottom: 1px;
-  border-color: grey;
-}
-
-.navbar-light .navbar-brand {
-    
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: #dbe2d9;
-}
-
-*/
-.navbar-static-top {
+<style>
+.bg-light {
   background-color: #08424c !important;
   margin-bottom: 1px !important; 
 }
@@ -49,8 +34,8 @@
   border-color: #FF6666;
 } 
 
-{% endblock %}
 </style>
+{% endblock %}
 
 {% block jumbotron %}
 {% if not request.user.is_authenticated %}
@@ -88,7 +73,7 @@
 {% else %}
 
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
+  <div class="col-md-6 offset-md-3">
     <p><h1 class="lead text-align-center">{{ title }}</h1></p>
     <form method='POST' action=''>{% csrf_token %}
       {{ form|crispy }}
